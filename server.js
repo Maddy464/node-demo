@@ -7,11 +7,43 @@ const server = http.createServer( (req, res)=>{
 
     const { headers, url, method } = req;
     
-    console.log( headers, url, method);
+    console.log( server);
 
 
 
-    res.end('Welcome to 555 CAPM series');
+    
+
+    // test case 2 : sending rsponse type
+
+  //  res.setHeader('Content-Type', 'text/html');
+
+   // res.end('<h1>Welcome to 555 CAPM series</h1>');
+
+
+   // test case 3
+
+//    res.setHeader('Content-Type', 'application/json');
+//    res.end( JSON.stringify({
+//      "Couse-Name" : "CAPM Course"
+
+//    }));
+
+// test 4
+
+ if(req.method === 'POST'){
+
+  var data = [];
+  req.on( 'data' , (chunk)=>{
+    Data.push(chunk);
+
+  }).on('end' ,()=>{
+
+      const bodyString = Buffer.concat(data).toString();
+      res.end(JSON.stringify(bodyString));
+  })
+
+ }
+
 
 });
 
