@@ -1,0 +1,11 @@
+
+####
+
+POST http://port3009-workspaces-ws-xnvlx.us10.trial.applicationstudio.cloud.sap  HTTP/1.1
+Content-Type : application/json
+
+{
+
+"Name" : "Mahesh"
+
+}
